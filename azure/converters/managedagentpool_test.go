@@ -19,7 +19,7 @@ package converters
 import (
 	"testing"
 
-	"github.com/Azure/azure-sdk-for-go/services/containerservice/mgmt/2022-03-01/containerservice"
+	"github.com/Azure/azure-sdk-for-go/services/containerservice/mgmt/2022-07-01/containerservice"
 	. "github.com/onsi/gomega"
 	"k8s.io/utils/pointer"
 	"sigs.k8s.io/cluster-api-provider-azure/azure"
@@ -40,17 +40,17 @@ func Test_AgentPoolToManagedClusterAgentPoolProfile(t *testing.T) {
 					OsType:              azure.LinuxOS,
 					OsDiskSizeGB:        pointer.Int32(100),
 					Count:               pointer.Int32(2),
-					Type:                containerservice.AgentPoolTypeVirtualMachineScaleSets,
+					Type:                containerservice.VirtualMachineScaleSets,
 					OrchestratorVersion: pointer.String("1.22.6"),
 					VnetSubnetID:        pointer.String("/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-123/providers/Microsoft.Network/virtualNetworks/vnet-123/subnets/subnet-123"),
-					Mode:                containerservice.AgentPoolModeUser,
+					Mode:                containerservice.User,
 					EnableAutoScaling:   pointer.Bool(true),
 					MaxCount:            pointer.Int32(5),
 					MinCount:            pointer.Int32(2),
 					NodeTaints:          &[]string{"key1=value1:NoSchedule"},
 					AvailabilityZones:   &[]string{"zone1"},
 					MaxPods:             pointer.Int32(60),
-					OsDiskType:          containerservice.OSDiskTypeManaged,
+					OsDiskType:          containerservice.Managed,
 					NodeLabels: map[string]*string{
 						"custom": pointer.String("default"),
 					},
@@ -67,17 +67,17 @@ func Test_AgentPoolToManagedClusterAgentPoolProfile(t *testing.T) {
 					OsType:              azure.LinuxOS,
 					OsDiskSizeGB:        pointer.Int32(100),
 					Count:               pointer.Int32(2),
-					Type:                containerservice.AgentPoolTypeVirtualMachineScaleSets,
+					Type:                containerservice.VirtualMachineScaleSets,
 					OrchestratorVersion: pointer.String("1.22.6"),
 					VnetSubnetID:        pointer.String("/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-123/providers/Microsoft.Network/virtualNetworks/vnet-123/subnets/subnet-123"),
-					Mode:                containerservice.AgentPoolModeUser,
+					Mode:                containerservice.User,
 					EnableAutoScaling:   pointer.Bool(true),
 					MaxCount:            pointer.Int32(5),
 					MinCount:            pointer.Int32(2),
 					NodeTaints:          &[]string{"key1=value1:NoSchedule"},
 					AvailabilityZones:   &[]string{"zone1"},
 					MaxPods:             pointer.Int32(60),
-					OsDiskType:          containerservice.OSDiskTypeManaged,
+					OsDiskType:          containerservice.Managed,
 					NodeLabels: map[string]*string{
 						"custom": pointer.String("default"),
 					},

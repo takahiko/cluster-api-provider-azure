@@ -23,7 +23,7 @@ import (
 	"net"
 	"time"
 
-	"github.com/Azure/azure-sdk-for-go/services/containerservice/mgmt/2022-03-01/containerservice"
+	"github.com/Azure/azure-sdk-for-go/services/containerservice/mgmt/2022-07-01/containerservice"
 	"github.com/google/go-cmp/cmp"
 	"github.com/pkg/errors"
 	"k8s.io/utils/pointer"

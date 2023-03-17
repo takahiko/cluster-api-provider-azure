@@ -22,7 +22,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/Azure/azure-sdk-for-go/services/containerservice/mgmt/2022-03-01/containerservice"
+	"github.com/Azure/azure-sdk-for-go/services/containerservice/mgmt/2022-07-01/containerservice"
 	"github.com/google/go-cmp/cmp"
 	. "github.com/onsi/gomega"
 	"github.com/pkg/errors"
@@ -95,7 +95,7 @@ func sdkFakeAgentPool(changes ...func(*containerservice.AgentPool)) containerser
 			OsDiskType:          containerservice.OSDiskType("fake-os-disk-type"),
 			OsType:              containerservice.OSType("fake-os-type"),
 			Tags:                map[string]*string{"fake": pointer.String("tag")},
-			Type:                containerservice.AgentPoolTypeVirtualMachineScaleSets,
+			Type:                containerservice.VirtualMachineScaleSets,
 			VMSize:              pointer.String("fake-sku"),
 			VnetSubnetID:        pointer.String("fake-vnet-subnet-id"),
 		},

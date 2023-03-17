@@ -21,7 +21,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/Azure/azure-sdk-for-go/services/containerservice/mgmt/2022-03-01/containerservice"
+	"github.com/Azure/azure-sdk-for-go/services/containerservice/mgmt/2022-07-01/containerservice"
 	"github.com/google/go-cmp/cmp"
 	. "github.com/onsi/gomega"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -591,7 +591,7 @@ func TestManagedMachinePoolScope_OSDiskType(t *testing.T) {
 				},
 				ManagedMachinePool: ManagedMachinePool{
 					MachinePool:      getMachinePool("pool1"),
-					InfraMachinePool: getAzureMachinePoolWithOsDiskType("pool1", string(containerservice.OSDiskTypeEphemeral)),
+					InfraMachinePool: getAzureMachinePoolWithOsDiskType("pool1", string(containerservice.Ephemeral)),
 				},
 			},
 			Expected: &agentpools.AgentPoolSpec{
@@ -600,7 +600,7 @@ func TestManagedMachinePoolScope_OSDiskType(t *testing.T) {
 				Mode:         "User",
 				Cluster:      "cluster1",
 				Replicas:     1,
-				OsDiskType:   pointer.String(string(containerservice.OSDiskTypeEphemeral)),
+				OsDiskType:   pointer.String(string(containerservice.Ephemeral)),
 				VnetSubnetID: "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups//providers/Microsoft.Network/virtualNetworks//subnets/",
 				Headers:      map[string]string{},
 			},

@@ -20,7 +20,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/Azure/azure-sdk-for-go/services/containerservice/mgmt/2022-03-01/containerservice"
+	"github.com/Azure/azure-sdk-for-go/services/containerservice/mgmt/2022-07-01/containerservice"
 	"github.com/google/go-cmp/cmp"
 	. "github.com/onsi/gomega"
 	"k8s.io/utils/pointer"
@@ -190,7 +190,7 @@ func getSampleManagedCluster() containerservice.ManagedCluster {
 					Name:         pointer.String("test-agentpool-0"),
 					Mode:         containerservice.AgentPoolMode(infrav1.NodePoolModeSystem),
 					Count:        pointer.Int32(2),
-					Type:         containerservice.AgentPoolTypeVirtualMachineScaleSets,
+					Type:         containerservice.VirtualMachineScaleSets,
 					OsDiskSizeGB: pointer.Int32(0),
 					Tags: map[string]*string{
 						"test-tag": pointer.String("test-value"),
@@ -200,7 +200,7 @@ func getSampleManagedCluster() containerservice.ManagedCluster {
 					Name:                pointer.String("test-agentpool-1"),
 					Mode:                containerservice.AgentPoolMode(infrav1.NodePoolModeUser),
 					Count:               pointer.Int32(4),
-					Type:                containerservice.AgentPoolTypeVirtualMachineScaleSets,
+					Type:                containerservice.VirtualMachineScaleSets,
 					OsDiskSizeGB:        pointer.Int32(0),
 					VMSize:              pointer.String("test_SKU"),
 					OrchestratorVersion: pointer.String("v1.22.0"),

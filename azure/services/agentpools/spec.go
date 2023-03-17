@@ -21,7 +21,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/Azure/azure-sdk-for-go/services/containerservice/mgmt/2022-03-01/containerservice"
+	"github.com/Azure/azure-sdk-for-go/services/containerservice/mgmt/2022-07-01/containerservice"
 	"github.com/google/go-cmp/cmp"
 	"github.com/pkg/errors"
 	"k8s.io/utils/pointer"
@@ -347,7 +347,7 @@ func (s *AgentPoolSpec) Parameters(ctx context.Context, existing interface{}) (p
 			OsDiskType:           containerservice.OSDiskType(pointer.StringDeref(s.OsDiskType, "")),
 			OsType:               containerservice.OSType(pointer.StringDeref(s.OSType, "")),
 			ScaleSetPriority:     containerservice.ScaleSetPriority(pointer.StringDeref(s.ScaleSetPriority, "")),
-			Type:                 containerservice.AgentPoolTypeVirtualMachineScaleSets,
+			Type:                 containerservice.VirtualMachineScaleSets,
 			VMSize:               sku,
 			VnetSubnetID:         vnetSubnetID,
 			EnableNodePublicIP:   s.EnableNodePublicIP,

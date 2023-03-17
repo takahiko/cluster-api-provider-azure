@@ -22,7 +22,7 @@ package e2e
 import (
 	"context"
 
-	"github.com/Azure/azure-sdk-for-go/services/containerservice/mgmt/2022-03-01/containerservice"
+	"github.com/Azure/azure-sdk-for-go/services/containerservice/mgmt/2022-07-01/containerservice"
 	"github.com/Azure/go-autorest/autorest/azure/auth"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
