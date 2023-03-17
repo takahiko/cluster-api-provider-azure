@@ -62,7 +62,7 @@ type ManagedClusterSpec struct {
 	// LoadBalancerSKU for the managed cluster. Possible values include: 'Standard', 'Basic'. Defaults to Standard.
 	LoadBalancerSKU string
 
-	// NetworkPlugin used for building Kubernetes network. Possible values include: 'azure', 'kubenet'. Defaults to azure.
+	// NetworkPlugin used for building Kubernetes network. Possible values include: 'azure', 'kubenet', 'none'. Defaults to azure.
 	NetworkPlugin string
 
 	// NetworkPolicy used for building Kubernetes network. Possible values include: 'calico', 'azure'.

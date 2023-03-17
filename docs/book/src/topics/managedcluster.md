@@ -127,7 +127,7 @@ spec:
   subscriptionID: 00000000-0000-0000-0000-000000000000 # fake uuid
   version: v1.21.2
   networkPolicy: azure # or calico
-  networkPlugin: azure # or kubenet
+  networkPlugin: azure # or kubenet, none
   sku:
     tier: Free # or Paid
   addonProfiles:
@@ -205,7 +205,7 @@ should be fairly clear from context.
 
 | option                    | available values              |
 |---------------------------|-------------------------------|
-| networkPlugin             | azure, kubenet                |
+| networkPlugin             | azure, kubenet, none          |
 | networkPolicy             | azure, calico                 |
 
 | addon name                | YAML value                |
